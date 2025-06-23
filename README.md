@@ -22,6 +22,18 @@ This phase will be considered complete when:
 
 ### Code and Hardware Considerations
 
+**Materials Used in this Phase**
+
+| Material               | Quantity | Notes                           |
+| ---------------------- | -------- | ------------------------------- |
+| 5-24V Battery Bank     | 1        | Power RPi and motor separately  |
+| Raspberry Pi Zero 2W   | 1        | Desbian Lite Installation       |
+| Breadboard             | 1        |                                 |
+| 5V Stepper Motor       | 1        |                                 |
+| Motor Controller Board | 1        |                                 |
+| Button                 | 2        | Soft kick and hard kick buttons |
+| DuPont Cables          | Many     |                                 |
+
 I selected a Raspberry Pi Zero 2W as my SBC for the project, although I am sure an Arduino or other SBC would work fine. Running Linux Raspbian Lite.
 
 The code for this project is written in Python to be able to utilize the `RPi` library. All code can be found in the files at the top of the repo.
