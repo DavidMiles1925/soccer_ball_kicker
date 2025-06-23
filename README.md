@@ -19,6 +19,7 @@ This phase will be considered complete when:
 | ------- | -------------------------------------- |
 | 6/23/25 | Initialized GitHub repository          |
 | 6/23/25 | Drafted `kicker.py` with place-holders |
+| 6/23/25 | Prototype with RPi 4                   |
 
 ### Code and Hardware Considerations
 

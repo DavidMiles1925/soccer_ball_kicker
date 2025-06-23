@@ -5,8 +5,8 @@ from time import sleep
 MOTOR_PIN_ARRAY = [23,22,27,17]
 
 # Pins used for button input
-HARD_KICK_BUTTON_PIN = 7
-SOFT_KICK_BUTTON_PIN = 8
+HARD_KICK_BUTTON_PIN = 24
+SOFT_KICK_BUTTON_PIN = 25
 
 # Delay between steps in seconds
 ##########################################
@@ -18,7 +18,8 @@ SOFT_KICK_BUTTON_PIN = 8
 #   5 RPM: 0.002930
 #  10 RPM: 0.001465
 #  15 RPM: 0.000977
-#  20 RPM: 0.000732
+#  20 RPM: 0.000733
+#  40 RPM: 0.000366
 ##########################################
 # Paste value here:
 
@@ -86,10 +87,14 @@ def kick(number_of_steps):
 
 
 if __name__ == "__main__":
+    set_up_pins()
 
     while True:
-        if GPIO.input(HARD_KICK_BUTTON_PIN) == False:
+        if GPIO.input(HARD_KICK_BUTTON_PIN) == True:
+            print("push")
+            sleep(1)
             kick(steps_per_hard_kick)
 
         if GPIO.input(SOFT_KICK_BUTTON_PIN) == False:
-            kick(steps_per_soft_kick)
+            print("push2")
+            #kick(steps_per_soft_kick)
