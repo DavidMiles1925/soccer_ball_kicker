@@ -4,6 +4,8 @@ The aim of this project is to create an assistive device that can be used by ind
 
 ## Phase 1: Code and Proof-of-Concept
 
+[Prototype Operating](./Photos/prototype1.gif)
+
 The goal of this phase is to create an "abstract" demo unit to show off the code.
 
 This phase will be considered complete when:
