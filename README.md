@@ -10,7 +10,7 @@ The goal of this phase is to create an "abstract" demo unit to show off the code
 
 This phase will be considered complete when:
 
-- A motor should react to the push of a button
+- A motor reacts to the push of a button
 - Upon reacting, the motor should move forward in one direction and then return the same number of steps in the opposite direction.
 - There should be a "cool-down" period of 1-2 seconds to prevent double firing
 - A 3D printed shell for the electronics has been drafted.
@@ -31,10 +31,11 @@ This phase will be considered complete when:
 | ---------------------- | -------- | ------------------------------- |
 | 5-24V Battery Bank     | 1        | Power RPi and motor separately  |
 | Raspberry Pi Zero 2W   | 1        | Desbian Lite Installation       |
-| Breadboard             | 1        |                                 |
-| 5V Stepper Motor       | 1        |                                 |
-| Motor Controller Board | 1        |                                 |
+| Breadboard             | 1        | For prototyping only            |
+| 5V Stepper Motor       | 1        | Hope to change to a servo       |
+| Motor Controller Board | 1        | Hope to change to a servo       |
 | Button                 | 2        | Soft kick and hard kick buttons |
+| 10KΩ Resistor          | 2        | For button setup                |
 | DuPont Cables          | Many     |                                 |
 
 I selected a Raspberry Pi Zero 2W as my SBC for the project, although I am sure an Arduino or other SBC would work fine. Running Linux Raspbian Lite.
@@ -49,6 +50,7 @@ In this phase, I will:
 
 - Determine proper motor type and power requirements
 - Determine gearing requirements for the amount of torque I will need for kicking a soccer ball
+- Appropriate materials for construction have been gathered/produced
 
 ## Phase 3: Lab Testing
 
@@ -56,6 +58,7 @@ In this phase, the unit will be tested a troubleshot within a controlled environ
 
 This phase will be considered complete when:
 
+- An operable prototype is constructed
 - The unit kicks a ball with 95% reliability or greater.
 - The safety considerations of the unit have been fully assessed.
 
