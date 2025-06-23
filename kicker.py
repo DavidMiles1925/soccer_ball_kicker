@@ -4,8 +4,9 @@ from time import sleep
 # The pins we will use to drive the motor on the Raspberry Pi
 MOTOR_PIN_ARRAY = [23,22,27,17]
 
-HARD_KICK_BUTTON_PIN = 0
-SOFT_KICK_BUTTON_PIN = 0
+# Pins used for button input
+HARD_KICK_BUTTON_PIN = 7
+SOFT_KICK_BUTTON_PIN = 8
 
 # Delay between steps in seconds
 ##########################################
@@ -36,9 +37,14 @@ step_sequence = [
     [0, 0, 0, 1]
 ]
 
+# This variale is used by the step() function for mathematically determining which item in the step_sequence array to call.
+motor_step_counter = 0
+
+# These variables determine how far to move the motor for each type of kick.
 steps_per_hard_kick = 1000
 steps_per_soft_kick = 500
 
+# This function prepares the GPIO pins on the Raspberry Pi for use.
 def set_up_pins():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -52,7 +58,7 @@ def set_up_pins():
     GPIO.setup(SOFT_KICK_BUTTON_PIN, GPIO.IN)
 
     
-
+# This function moves the motor.
 def step(direction, steps):
     global motor_step_counter
 
@@ -68,15 +74,22 @@ def step(direction, steps):
             print("That didn't work")
         sleep(step_delay)
 
+
+# This function is used to "kick the ball"
 def kick(number_of_steps):
     print("hard kick")
     step(True, number_of_steps)
+    sleep(0.1)
     step(False, number_of_steps)
+    sleep(2)
     
 
 
 if __name__ == "__main__":
 
     while True:
-        #If the button is depressed, kick the ball
-        kick(steps_per_hard_kick)
+        if GPIO.input(HARD_KICK_BUTTON_PIN) == False:
+            kick(steps_per_hard_kick)
+
+        if GPIO.input(SOFT_KICK_BUTTON_PIN) == False:
+            kick(steps_per_soft_kick)
