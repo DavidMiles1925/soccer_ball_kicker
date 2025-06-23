@@ -22,7 +22,7 @@ SOFT_KICK_BUTTON_PIN = 8
 ##########################################
 # Paste value here:
 
-step_delay = 0.014648
+step_delay = 0.000732
 
 
 # Define the stepper motor sequence
