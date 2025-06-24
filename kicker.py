@@ -92,10 +92,10 @@ if __name__ == "__main__":
     while True:
         if GPIO.input(HARD_KICK_BUTTON_PIN) == True:
             print("push")
-            sleep(1)
             kick(steps_per_hard_kick)
+            sleep(1)
 
         if GPIO.input(SOFT_KICK_BUTTON_PIN) == True:
             print("push2")
-            sleep(1)
             kick(steps_per_soft_kick)
+            sleep(1)
